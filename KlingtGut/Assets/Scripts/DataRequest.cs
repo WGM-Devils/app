@@ -5,40 +5,51 @@ using UnityEngine.Networking;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class implementation
-{
-    public string type;
-    public string content;
-}
-[System.Serializable]
-public class innerData
-{
-    public int user;
-    public string title;
-    public string description;
-    public implementation imp;
-    public string createdAt;
-    public string updatedAt;
-}
-[System.Serializable]
-public class Messages
-{
-    public innerData[] Message;
-}
+
+
+
 public class DataRequest : MonoBehaviour
 {
-    public TMP_InputField output;
-    public string response;
-    public TextAsset responseText;
 
-    void Start()
+    public class Implementation
     {
-       
-        StartCoroutine(GetRequest());
+        public string type { get; set; }
+        public string content { get; set; }
+    }
+
+    public class Message0
+    {
+        public string user { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public Implementation implementation { get; set; }
+        public string createdAt { get; set; }
+        public string lastUpdated { get; set; }
+    }
+
+    public class Root
+    {
+        public Message0 message0 { get; set; }
     }
 
 
+
+
+
+
+
+
+    public TMP_InputField output;
+ 
+
+    
+
+    public void Start()
+    {
+        StartCoroutine(GetRequest());
+    }
+
+    
     IEnumerator GetRequest()
     {
         string uri = "https://official.klingt-gut.repl.co/api/posts/all";
@@ -56,8 +67,13 @@ public class DataRequest : MonoBehaviour
             }
             else
             {
-                Messages myData = JsonUtility.FromJson<Messages>(request.downloadHandler.text);
-                Debug.Log(myData.Message[0].user);
+                //output.text = request.downloadHandler.text;
+                Root Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
+
+
+                Debug.Log(Data.message0.title);
+                
+
             }
         }
     }
