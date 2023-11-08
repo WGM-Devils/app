@@ -1,0 +1,26 @@
+{
+  "messages": [
+    {
+      "user": "0",
+      "title": "Test",
+      "description": "lorem ipsum",
+      "implementation": {
+        "type": "Image",
+        "content": ""
+      },
+      "createdAt": "09.09.2023",
+      "lastUpdated": "09.09.2023"
+    },
+    {
+      "user": "1",
+      "title": "Fest",
+      "description": "carpe diem",
+      "implementation": {
+        "type": "Advertisement",
+        "content": "Hi"
+      },
+      "createdAt": "09.01.2024",
+      "lastUpdated": "09.01.2024"
+    }
+  ]
+}

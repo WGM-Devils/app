@@ -11,45 +11,57 @@ using UnityEngine;
 public class DataRequest : MonoBehaviour
 {
 
-    public class Implementation
+    public class comments
     {
-        public string type { get; set; }
-        public string content { get; set; }
+        public int count;
+        public int Id;
     }
 
-    public class Message0
+    [System.Serializable]
+    public class embed
     {
-        public string user { get; set; }
-        public string title { get; set; }
-        public string description { get; set; }
-        public Implementation implementation { get; set; }
-        public string createdAt { get; set; }
-        public string lastUpdated { get; set; }
+        public string type { get; set; }
+        public string link { get; set; }
     }
+
+    [System.Serializable]
+    public class messages
+    {
+        public int Id;
+        public string user;
+        public string title;
+        public string description;
+        public embed implementation;
+        public comments comment;
+        public string createdAt;
+        public string lastUpdated;
+    }
+    [System.Serializable]
 
     public class Root
     {
-        public Message0 message0 { get; set; }
+        public messages[] messages;
+
     }
 
 
-
+    public Root Data = new Root();
 
 
 
 
 
     public TMP_InputField output;
- 
 
-    
+
+
 
     public void Start()
     {
         StartCoroutine(GetRequest());
     }
 
-    
+
     IEnumerator GetRequest()
     {
         string uri = "https://official.klingt-gut.repl.co/api/posts/all";
@@ -68,11 +80,11 @@ public class DataRequest : MonoBehaviour
             else
             {
                 //output.text = request.downloadHandler.text;
-                Root Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
+                Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
 
 
-                Debug.Log(Data.message0.title);
-                
+                Debug.Log(Data.messages);
+
 
             }
         }
