@@ -5,19 +5,20 @@ using UnityEngine.Networking;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-    public class views
+[System.Serializable]
+public class views
     {
         int count;
         int[] id;
     }
-    public class likes
+[System.Serializable]
+public class likes
     {
         int count;
         int[] collection;
     }
-
-    public class comments
+[System.Serializable]
+public class comments
     {
         bool allowed;
         public int count;
@@ -32,9 +33,9 @@ using UnityEngine;
     }
 
     [System.Serializable]
-    public class messages
+    public class Posts
     {
-        public int Id;
+
         public string user;
         public string title;
         public string description;
@@ -44,12 +45,13 @@ using UnityEngine;
         public views wiews;
         public string createdAt;
         public string lastUpdated;
+        public string Id;
     }
     [System.Serializable]
 
     public class Root
     {
-        public messages[] messages;
+        public Posts[] messages;
 
     }
 
@@ -78,7 +80,7 @@ public class PostRequest : MonoBehaviour
 
     IEnumerator GetRequest()
     {
-        string uri = "https://official.klingt-gut.repl.co/api/posts/all";
+        string uri = "https://hallo.klingt-gut.repl.co/api/posts/all";
         using (UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             request.SetRequestHeader("Content-Type", "application/json");
@@ -89,15 +91,25 @@ public class PostRequest : MonoBehaviour
             if (request.isNetworkError || request.isHttpError)
             {
                 //output.text = "error";
+                Debug.Log("error");
 
             }
             else
             {
-                //output.text = request.downloadHandler.text;
-                Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
+                Debug.Log(request.downloadHandler.text);
+                //output.text = request.downloadHandler.text;#
+                try
+                {
+                    Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
+                }
+                catch
+                {
+                    Debug.Log("failed");
+                }
 
 
-                Debug.Log(Data.messages[1].wiews);
+
+            //    Debug.Log(Data.messages[1].wiews);
 
 
             }
