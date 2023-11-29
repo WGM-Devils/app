@@ -6,19 +6,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class views
+public class view
     {
         int count;
         int[] id;
     }
 [System.Serializable]
-public class likes
+public class like
     {
         int count;
         int[] collection;
     }
 [System.Serializable]
-public class comments
+public class comment
     {
         bool allowed;
         public int count;
@@ -26,7 +26,7 @@ public class comments
     }
 
     [System.Serializable]
-    public class embed
+    public class embeded
     {
         public string type { get; set; }
         public string link { get; set; }
@@ -39,10 +39,10 @@ public class comments
         public string user;
         public string title;
         public string description;
-        public embed implementation;
-        public comments comment;
-        public likes like;
-        public views wiews;
+        public embeded embed;
+        public comment comments;
+        public like likes;
+        public view views;
         public string createdAt;
         public string lastUpdated;
         public string Id;
@@ -51,7 +51,7 @@ public class comments
 
     public class Root
     {
-        public Posts[] messages;
+        public Posts[] posts;
 
     }
 
@@ -96,11 +96,12 @@ public class PostRequest : MonoBehaviour
             }
             else
             {
-                Debug.Log(request.downloadHandler.text);
+
                 //output.text = request.downloadHandler.text;#
                 try
                 {
                     Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
+                    Debug.Log(Data.posts[0].embed.link);
                 }
                 catch
                 {
