@@ -7,56 +7,56 @@ using UnityEngine;
 
 [System.Serializable]
 public class view
-    {
-        int count;
-        int[] id;
-    }
+{
+    public int count;
+    public int[] id;
+}
 [System.Serializable]
 public class like
-    {
-        int count;
-        int[] collection;
-    }
+{
+    public int count;
+    public int[] collection;
+}
 [System.Serializable]
 public class comment
-    {
-        bool allowed;
-        public int count;
-        public int[] Id;
-    }
+{
+    public bool allowed;
+    public int count;
+    public int[] Id;
+}
 
-    [System.Serializable]
-    public class embeded
-    {
-        public string type { get; set; }
-        public string link { get; set; }
-    }
+[System.Serializable]
+public class embeded
+{
+    public string type { get; set; }
+    public string link { get; set; }
+}
 
-    [System.Serializable]
-    public class Posts
-    {
+[System.Serializable]
+public class Posts
+{
 
-        public string user;
-        public string title;
-        public string description;
-        public embeded embed;
-        public comment comments;
-        public like likes;
-        public view views;
-        public string createdAt;
-        public string lastUpdated;
-        public string Id;
-    }
-    [System.Serializable]
+    public string user;
+    public string title;
+    public string description;
+    public embeded embed;
+    public comment comments;
+    public like likes;
+    public view views;
+    public string createdAt;
+    public string lastUpdated;
+    public string Id;
+}
+[System.Serializable]
 
-    public class Root
-    {
-        public Posts[] posts;
+public class Root
+{
+    public Posts[] posts;
 
-    }
+}
 
 public class PostRequest : MonoBehaviour
-{ 
+{
 
 
 
@@ -83,7 +83,7 @@ public class PostRequest : MonoBehaviour
         string uri = "https://hallo.klingt-gut.repl.co/api/posts/all";
         using (UnityWebRequest request = UnityWebRequest.Get(uri))
         {
-            request.SetRequestHeader("Content-Type", "application/json");
+            //request.SetRequestHeader("Content-Type", "application/json");
             request.SetRequestHeader("Authorization", "KlingtGut");
             yield return request.SendWebRequest();
 
@@ -110,7 +110,7 @@ public class PostRequest : MonoBehaviour
 
 
 
-            //    Debug.Log(Data.messages[1].wiews);
+                //    Debug.Log(Data.messages[1].wiews);
 
 
             }
