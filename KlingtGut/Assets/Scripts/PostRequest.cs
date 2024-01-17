@@ -4,57 +4,69 @@ using System.Collections;
 using UnityEngine.Networking;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
-public class view
-{
-    public int count;
-    public int[] id;
-}
-[System.Serializable]
-public class like
-{
-    public int count;
-    public int[] collection;
-}
-[System.Serializable]
-public class comment
+public class Comments
 {
     public bool allowed;
     public int count;
-    public int[] Id;
+    public List<object> collection;
 }
-
 [System.Serializable]
-public class embeded
+public class Contents
 {
-    public string type { get; set; }
-    public string link { get; set; }
+    public List<Post> posts;
 }
-
 [System.Serializable]
-public class Posts
+public class Embed
 {
-
+    public string type;
+    public string link;
+}
+[System.Serializable]
+public class Likes
+{
+    public int count;
+    public List<object> collection;
+}
+[System.Serializable]
+public class Post
+{
+    public Embed embed;
+    public Comments comments;
+    public Likes likes;
+    public Views views;
+    public string _id;
     public string user;
     public string title;
-    public string description;
-    public embeded embed;
-    public comment comments;
-    public like likes;
-    public view views;
-    public string createdAt;
-    public string lastUpdated;
-    public string Id;
+    public string content;
+    public DateTime createdAt;
+    public DateTime lastUpdated;
+    public int __v;
 }
 [System.Serializable]
-
+public class Response
+{
+    public string content_type;
+    public Contents contents;
+}
+[System.Serializable]
 public class Root
 {
-    public Posts[] posts;
-
+    public int code;
+    public string message;
+    public string description;
+    public DateTime date;
+    public bool ok;
+    public Response response;
 }
-
+[System.Serializable]
+public class Views
+{
+    public int count;
+    public List<object> collection;
+}
 public class PostRequest : MonoBehaviour
 {
 
@@ -101,7 +113,7 @@ public class PostRequest : MonoBehaviour
                 try
                 {
                     Data = JsonConvert.DeserializeObject<Root>(request.downloadHandler.text);
-                    Debug.Log(Data.posts[0].embed.link);
+                    //Debug.Log(Data.posts[0].embed.link);
                 }
                 catch
                 {
