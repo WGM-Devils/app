@@ -23,7 +23,7 @@ public class PostObj : MonoBehaviour
     public Text viewsCount;
     public Text createdAt;
     public Image Embed;
-
+    private int FirstLoaded;
 
     public void Start()
     {
@@ -31,13 +31,20 @@ public class PostObj : MonoBehaviour
     }
     private void Update()
     {
+        if (Posts.GetComponent<PostRequest>().Data.response.contents.posts.Count > 0&& FirstLoaded == 0) 
+        {
         Message = Posts.GetComponent<PostRequest>().Data.response.contents.posts[Id];
-
-        Title.text = Message.title;
+            FirstLoaded = 1;
+            Title.text = Message.title;
         StartCoroutine(LoadImage(Message.embed.link));
 
         likesCount.text = Message.likes.count + "";
         viewsCount.text = Message.views.count + "";
+        }
+
+
+
+
         //description.text = Message.description + "";
 
     }

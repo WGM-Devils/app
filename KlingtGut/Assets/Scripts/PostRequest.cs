@@ -92,7 +92,7 @@ public class PostRequest : MonoBehaviour
 
     IEnumerator GetRequest()
     {
-        string uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-1dnjn7p68t02k.global.replit.dev/posts/all"/*get/id=123/type=arr*/;
+        string uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-3cb4kpoq04yr4.riker.replit.dev/posts/all"/*get/id=123/type=arr*/;
         using (UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             //request.SetRequestHeader("Content-Type", "application/json");
@@ -102,8 +102,14 @@ public class PostRequest : MonoBehaviour
 
             if (request.isNetworkError || request.isHttpError)
             {
-                //output.text = "error";
-                Debug.Log("error");
+                if (request.isNetworkError)
+                {
+                Debug.Log("Network error");
+                }
+                else
+                {
+                    Debug.Log("http error");
+                }
 
             }
             else
