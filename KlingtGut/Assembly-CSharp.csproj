@@ -57,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Auth.cs" />
+    <Compile Include="Assets\Scripts\NextPost.cs" />
     <Compile Include="Assets\Scripts\PostObj.cs" />
     <Compile Include="Assets\Scripts\PostRequest.cs" />
+    <Compile Include="Assets\Scripts\SwipePost.cs" />
     <Compile Include="Assets\Scripts\UserRequest.cs" />
   </ItemGroup>
   <ItemGroup>
