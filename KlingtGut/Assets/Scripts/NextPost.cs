@@ -22,7 +22,19 @@ public class NextPost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distanceMoved = prePost.transform.localPosition.x;
+        float distanceMoved = 0;
+        if (prePost == null)
+        {
+            Destroy(this.gameObject.GetComponent<NextPost>());
+
+        }
+        else 
+        {
+            distanceMoved = prePost.transform.localPosition.x;
+        }
+
+
+
         if (Mathf.Abs(distanceMoved)> 0)
         {
             float step = Mathf.SmoothStep(0.8f, 1, Mathf.Abs(distanceMoved) / (Screen.width / 2));

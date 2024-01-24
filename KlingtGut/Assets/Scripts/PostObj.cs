@@ -14,7 +14,7 @@ public class PostObj : MonoBehaviour
 
     public GameObject Posts;
     public Post Message;
-    public int Id;
+
     public Text userId;
     public Text Title;
     public Text description;
@@ -27,16 +27,27 @@ public class PostObj : MonoBehaviour
 
     public void Start()
     {
+
         Posts = GameObject.FindGameObjectWithTag("Post");
     }
     private void Update()
     {
+        if(Posts == null)
+        {
+            Posts = GameObject.FindGameObjectWithTag("Post");
+             
+        }
+
         if (Posts.GetComponent<PostRequest>().Data.response.contents.posts.Count > 0&& FirstLoaded == 0) 
         {
-        Message = Posts.GetComponent<PostRequest>().Data.response.contents.posts[Id];
+        Message = Posts.GetComponent<PostRequest>().Data.response.contents.posts[Random.Range(0, Posts.GetComponent<PostRequest>().Data.response.contents.posts.Count)];
             FirstLoaded = 1;
             Title.text = Message.title;
+            if (Message.embed.link != null)
+            {
         StartCoroutine(LoadImage(Message.embed.link));
+            }
+
 
         likesCount.text = Message.likes.count + "";
         viewsCount.text = Message.views.count + "";

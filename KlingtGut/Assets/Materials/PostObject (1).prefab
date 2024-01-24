@@ -286,8 +286,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 6, y: -108}
   m_SizeDelta: {x: 1130.66, y: 2070.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -357,7 +357,7 @@ MonoBehaviour:
     title: 
     content: 
     __v: 0
-  Id: 0
+  Id: 2
   userId: {fileID: 0}
   Title: {fileID: 4318585861212352587}
   description: {fileID: 4318585862114775325}
