@@ -92,7 +92,7 @@ public class Auth : MonoBehaviour
     IEnumerator LogingIn()
     {
 
-        string uri = "https://b0fc8dd9-5d36-49bb-a59b-82f1a484f310-00-3cb4kpoq04yr4.riker.replit.dev/auth/login"/*get/id=123/type=arr*/;
+        string uri = "https://klingt-gut.cyclic.app/api/auth/login"/*get/id=123/type=arr*/;
         using (UnityWebRequest request = UnityWebRequest.Post(uri,  "{ \"email\":\"" + lEmail.text + "\",\"password\":\""+lPassword+"\"}"))
         {
             request.SetRequestHeader("Authorization", "KlingtGut");

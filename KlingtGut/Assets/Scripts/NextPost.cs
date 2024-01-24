@@ -12,6 +12,10 @@ public class NextPost : MonoBehaviour
         swipe = FindObjectOfType<SwipePost>();
         prePost = swipe.gameObject;
 
+        this.transform.SetParent(GameObject.Find("Canvas").transform);
+         
+        this.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(6, -108, 0);
+        transform.SetSiblingIndex(2);
         transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
     }
 

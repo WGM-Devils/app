@@ -27,7 +27,7 @@ public class PostObj : MonoBehaviour
 
     public void Start()
     {
-
+        Posts = GameObject.FindGameObjectWithTag("Post");
     }
     private void Update()
     {
