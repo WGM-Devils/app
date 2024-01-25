@@ -49,10 +49,11 @@ public class PostObj : MonoBehaviour
             }
 
 
+
+        }
         likesCount.text = Message.likes.count + "";
         viewsCount.text = Message.views.count + "";
-        }
-
+        description.text = Message.content + "";
 
 
 

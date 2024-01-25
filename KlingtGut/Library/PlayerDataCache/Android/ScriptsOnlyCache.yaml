@@ -22,7 +22,6 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -61,37 +60,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11476}
     - Class: 114
-      Script: {instanceID: 11748}
+      Script: {instanceID: 11718}
     - Class: 114
-      Script: {instanceID: 11810}
+      Script: {instanceID: 11830}
     - Class: 114
-      Script: {instanceID: 12350}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12592}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12662}
+      Script: {instanceID: 12434}
     - Class: 114
-      Script: {instanceID: 13462}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 13932}
+      Script: {instanceID: 12746}
     - Class: 114
-      Script: {instanceID: 13954}
+      Script: {instanceID: 13546}
     - Class: 114
-      Script: {instanceID: 14240}
+      Script: {instanceID: 14016}
     - Class: 114
-      Script: {instanceID: 14304}
+      Script: {instanceID: 14038}
     - Class: 114
-      Script: {instanceID: 14430}
+      Script: {instanceID: 14324}
     - Class: 114
-      Script: {instanceID: 14768}
+      Script: {instanceID: 14514}
     - Class: 114
-      Script: {instanceID: 15176}
+      Script: {instanceID: 14852}
     - Class: 114
-      Script: {instanceID: 16628}
-    - Class: 114
-      Script: {instanceID: 18782}
+      Script: {instanceID: 15260}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,6 +148,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 7e27eb61fb916fbd34cff57d8fd1c691
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwipePost
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -223,6 +226,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NextPost
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -309,7 +318,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 0ab6fb5326f24a91c5b9370d1ed364e6
+      Hash: aa42c42ec3fd0e219542ac5c7e4722df
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PostObj
@@ -643,19 +652,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 0e0c75dd42829ff78103361b39e1232e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SwipePost
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NextPost
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main.unity
-  playerPath: C:/Users/phili/1.apk
+  playerPath: C:/Users/devils/Documents/6.apk

@@ -37,7 +37,7 @@ public class NextPost : MonoBehaviour
 
         if (Mathf.Abs(distanceMoved)> 0)
         {
-            float step = Mathf.SmoothStep(0.8f, 1, Mathf.Abs(distanceMoved) / (Screen.width / 2));
+            float step = Mathf.SmoothStep(0.8f, 1f, Mathf.Abs(distanceMoved) / (Screen.width / 2));
             transform.localScale = new Vector3(step, step, step);
         }
         
