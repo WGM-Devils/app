@@ -92,7 +92,7 @@ public class PostRequest : MonoBehaviour
 
     IEnumerator GetRequest()
     {
-        string uri = "https://klingt-gut.cyclic.app/api/posts/all"/*get/id=123/type=arr*/;
+        string uri = "https://klingt-gut.onrender.com/api/posts/all"/*get/id=123/type=arr*/;
         using (UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             //request.SetRequestHeader("Content-Type", "application/json");

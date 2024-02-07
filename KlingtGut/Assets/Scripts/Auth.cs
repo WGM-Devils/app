@@ -29,6 +29,12 @@ public class Root1
 }
 
 
+public class Root2
+{
+    public string email;
+    public string password;
+}
+
 
 
 
@@ -39,6 +45,8 @@ public class Auth : MonoBehaviour
     public GameObject Choosing;
     public GameObject Login;
     public GameObject Register;
+    public Root2 LoData;
+
 
     #region LoginData
 
@@ -55,9 +63,10 @@ public class Auth : MonoBehaviour
 
     #endregion
 
+
     void Start()
     {
-
+        LoData = new Root2();
     }
 
     // Update is called once per frame
@@ -92,13 +101,19 @@ public class Auth : MonoBehaviour
     IEnumerator LogingIn()
     {
 
-        string uri = "https://klingt-gut.cyclic.app/api/auth/login"/*get/id=123/type=arr*/;
-        using (UnityWebRequest request = UnityWebRequest.Post(uri,  "{ \"email\":\"" + lEmail.text + "\",\"password\":\""+lPassword+"\"}"))
+        string uri = "https://klingt-gut.onrender.com/api/auth/login"/*get/id=123/type=arr*/;
+        LoData.email = lEmail.text;
+        LoData.password = lPassword.text;
+        string json= JsonUtility.ToJson(LoData);
+        using (UnityWebRequest request = UnityWebRequest.Post(uri,"POST"))
         {
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
             request.SetRequestHeader("Authorization", "KlingtGut");
+            request.SetRequestHeader("Content-Type", "application/json");
             yield return request.SendWebRequest();
-
-
+            Debug.Log(json);
+            
             if (request.isNetworkError || request.isHttpError)
             {
 
@@ -109,6 +124,7 @@ public class Auth : MonoBehaviour
                 else
                 {
                     Debug.Log("http error");
+                    Debug.Log(request.downloadHandler.text);
                 }
             }
             else
