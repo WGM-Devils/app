@@ -652,7 +652,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 8d04e7d569f555be510cc1fa443c0495
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: HeathenEngineering.UX.Samples
+    className: ToggleSetAnimatorBoolean
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main.unity
-  playerPath: C:/Users/devils/Documents/6.apk
+  playerPath: C:/Users/phili/Documents/7.apk
