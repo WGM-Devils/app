@@ -14,7 +14,7 @@ public class NextPost : MonoBehaviour
 
         this.transform.SetParent(GameObject.Find("Canvas").transform);
          
-        this.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(6, -108, 0);
+        this.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(0, 414, 0);
         transform.SetSiblingIndex(2);
         transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
     }

@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Auth.cs" />
+    <Compile Include="Assets\Scripts\EarthSpin.cs" />
     <Compile Include="Assets\Scripts\NextPost.cs" />
     <Compile Include="Assets\Scripts\PostObj.cs" />
     <Compile Include="Assets\Scripts\PostRequest.cs" />
